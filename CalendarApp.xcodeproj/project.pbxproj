@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		614A63DE2C029B8B00522FD5 /* KeyChainTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A63DD2C029B8B00522FD5 /* KeyChainTask.swift */; };
+		6120918D2C112E6000B4F6B1 /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120918C2C112E6000B4F6B1 /* TaskDataManager.swift */; };
+		6152D87C2C0FDB140026F8F6 /* CalendarSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6152D87B2C0FDB140026F8F6 /* CalendarSplash.storyboard */; };
 		6155842C2BFD78B5004E698A /* CalendarAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155842B2BFD78B5004E698A /* CalendarAppApp.swift */; };
 		6155842E2BFD78B5004E698A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155842D2BFD78B5004E698A /* MainView.swift */; };
 		615584302BFD78B8004E698A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6155842F2BFD78B8004E698A /* Assets.xcassets */; };
@@ -19,8 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		614A63DD2C029B8B00522FD5 /* KeyChainTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainTask.swift; sourceTree = "<group>"; };
-		615584282BFD78B5004E698A /* CalendarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6120918C2C112E6000B4F6B1 /* TaskDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataManager.swift; sourceTree = "<group>"; };
+		6152D87B2C0FDB140026F8F6 /* CalendarSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSplash.storyboard; sourceTree = "<group>"; };
+		615584282BFD78B5004E698A /* NoteCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6155842B2BFD78B5004E698A /* CalendarAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAppApp.swift; sourceTree = "<group>"; };
 		6155842D2BFD78B5004E698A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6155842F2BFD78B8004E698A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 		6155843B2BFD98C5004E698A /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		6155843D2BFDAD80004E698A /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		6155843F2BFDB071004E698A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		61E5EA832C13B25200E90E9B /* NoteCal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteCal.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +56,7 @@
 		615584292BFD78B5004E698A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				615584282BFD78B5004E698A /* CalendarApp.app */,
+				615584282BFD78B5004E698A /* NoteCal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,13 +64,15 @@
 		6155842A2BFD78B5004E698A /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
-				614A63DD2C029B8B00522FD5 /* KeyChainTask.swift */,
+				61E5EA832C13B25200E90E9B /* NoteCal.entitlements */,
+				6152D87B2C0FDB140026F8F6 /* CalendarSplash.storyboard */,
 				6155842B2BFD78B5004E698A /* CalendarAppApp.swift */,
 				6155842D2BFD78B5004E698A /* MainView.swift */,
 				6155843F2BFDB071004E698A /* Utils.swift */,
 				6155843B2BFD98C5004E698A /* NewTask.swift */,
 				6155843D2BFDAD80004E698A /* TaskItem.swift */,
 				615584392BFD9863004E698A /* Task.swift */,
+				6120918C2C112E6000B4F6B1 /* TaskDataManager.swift */,
 				6155842F2BFD78B8004E698A /* Assets.xcassets */,
 				615584312BFD78B8004E698A /* Preview Content */,
 			);
@@ -85,9 +90,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		615584272BFD78B5004E698A /* CalendarApp */ = {
+		615584272BFD78B5004E698A /* NoteCal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 615584362BFD78B8004E698A /* Build configuration list for PBXNativeTarget "CalendarApp" */;
+			buildConfigurationList = 615584362BFD78B8004E698A /* Build configuration list for PBXNativeTarget "NoteCal" */;
 			buildPhases = (
 				615584242BFD78B5004E698A /* Sources */,
 				615584252BFD78B5004E698A /* Frameworks */,
@@ -97,9 +102,11 @@
 			);
 			dependencies = (
 			);
-			name = CalendarApp;
+			name = NoteCal;
+			packageProductDependencies = (
+			);
 			productName = CalendarApp;
-			productReference = 615584282BFD78B5004E698A /* CalendarApp.app */;
+			productReference = 615584282BFD78B5004E698A /* NoteCal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,11 +133,13 @@
 				Base,
 			);
 			mainGroup = 6155841F2BFD78B5004E698A;
+			packageReferences = (
+			);
 			productRefGroup = 615584292BFD78B5004E698A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				615584272BFD78B5004E698A /* CalendarApp */,
+				615584272BFD78B5004E698A /* NoteCal */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +151,7 @@
 			files = (
 				615584332BFD78B8004E698A /* Preview Assets.xcassets in Resources */,
 				615584302BFD78B8004E698A /* Assets.xcassets in Resources */,
+				6152D87C2C0FDB140026F8F6 /* CalendarSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				614A63DE2C029B8B00522FD5 /* KeyChainTask.swift in Sources */,
 				6155842E2BFD78B5004E698A /* MainView.swift in Sources */,
 				6155843E2BFDAD80004E698A /* TaskItem.swift in Sources */,
 				6155843C2BFD98C5004E698A /* NewTask.swift in Sources */,
+				6120918D2C112E6000B4F6B1 /* TaskDataManager.swift in Sources */,
 				6155843A2BFD9863004E698A /* Task.swift in Sources */,
 				6155842C2BFD78B5004E698A /* CalendarAppApp.swift in Sources */,
 				615584402BFDB071004E698A /* Utils.swift in Sources */,
@@ -289,15 +299,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NoteCal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarApp/Preview Content\"";
 				DEVELOPMENT_TEAM = DUR8QL52MQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalendarApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = CalendarSplash.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,15 +331,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NoteCal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarApp/Preview Content\"";
 				DEVELOPMENT_TEAM = DUR8QL52MQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalendarApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = CalendarSplash.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -354,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		615584362BFD78B8004E698A /* Build configuration list for PBXNativeTarget "CalendarApp" */ = {
+		615584362BFD78B8004E698A /* Build configuration list for PBXNativeTarget "NoteCal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				615584372BFD78B8004E698A /* Debug */,

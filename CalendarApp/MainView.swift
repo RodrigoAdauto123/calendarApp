@@ -10,27 +10,21 @@ import SwiftData
 
 struct MainView: View {
     @State private var selectedDate = Date()
-    @State private var tasks: [Task] = []
+    @Query private var tasks: [Task] = []
     @Environment(\.modelContext) private var context
     
-    init() {
-//        let test = Test()
-//        test.add(task: Task(title: "nuevo", description: "nuevo", date: Date(), time: Date(), alarm: Date()))
-//        test.getTask()
-    }
-    
     var body: some View {
-        
         NavigationStack {
             VStack {
                 DatePicker("Choose a day", selection: $selectedDate,
                            displayedComponents: [.date])
                 .datePickerStyle(.graphical)
-                let taskFilter = tasks.filter { Calendar.current.isDate($0.date,
+                let taskFilter = tasks.filter { Calendar.current.isDate($0.date ?? Date(),
                                                                         inSameDayAs: selectedDate)}
                 ScrollView {
                     ForEach(taskFilter) { task in
-                        TaskItem(tasks: $tasks, task: task)
+                        TaskItem(task: task)
+                            .padding(.bottom, 20)
                     }
                 }
                 Spacer()
@@ -39,7 +33,7 @@ struct MainView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        NewTask(task: $tasks, dateTask: selectedDate)
+                        NewTask(dateTask: selectedDate, typeTask: .CREATE)
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }
@@ -48,7 +42,7 @@ struct MainView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("To do list app")
             .padding()
-        }   
+        }
     }
 }
 

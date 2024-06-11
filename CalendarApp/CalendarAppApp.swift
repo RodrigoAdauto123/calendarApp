@@ -10,11 +10,10 @@ import SwiftData
 
 @main
 struct CalendarAppApp: App {
-    @Environment(\.modelContext) private var context
     var body: some Scene {
         WindowGroup {
             MainView()
         }
-        .modelContext(context)
+        .modelContainer(for: [Task.self])
     }
 }

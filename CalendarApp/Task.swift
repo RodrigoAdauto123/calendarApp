@@ -8,29 +8,18 @@
 import Foundation
 import SwiftData
 
-struct Task: Identifiable, Codable {
+@Model
+class Task: Identifiable {
     let id = UUID()
-    let title: String
-    let descriptionTask: String
-    let date: Date
-    let time: Date
-    let alarm: Date
+    var title: String?
+    var descriptionTask: String?
+    var date: Date?
+    var time: Date?
+    
+    init(title: String, descriptionTask: String, date: Date, time: Date) {
+        self.title = title
+        self.descriptionTask = descriptionTask
+        self.date = date
+        self.time = time
+    }
 }
-
-//@Model
-//struct Task: Identifiable {
-//    @Attribute(.unique) let id = UUID()
-//    let title: String
-//    let descriptionTask: String
-//    let date: Date
-//    let time: Date
-//    let alarm: Date
-//    
-//    init(title: String, descriptionTask: String, date: Date, time: Date, alarm: Date) {
-//        self.title = title
-//        self.descriptionTask = descriptionTask
-//        self.date = date
-//        self.time = time
-//        self.alarm = alarm
-//    }
-//}

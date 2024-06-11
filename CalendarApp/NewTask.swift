@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum TypeTask {
     case CREATE
@@ -15,28 +16,22 @@ enum TypeTask {
 struct NewTask: View {
     
     @Environment(\.dismiss) private var dismiss
-    @Binding var task: [Task]
+    @Environment(\.modelContext) private var context
+    
     var dateTask: Date
     var selectedTask: Task?
     let typeTask: TypeTask
-    @State private var titleTask = ""
-    @State private var descriptionTask = ""
+    @State private var titleTask: String = .empty
+    @State private var descriptionTask: String = .empty
     @State private var timeTask = Date()
-    @State private var alarmTask = Date()
     
-    init(task: Binding<[Task]>, dateTask: Date, selectedTask: Task? = nil) {
-        self._task = task
+    init(dateTask: Date, selectedTask: Task? = nil, typeTask: TypeTask) {
         self.dateTask = dateTask
         self.selectedTask = selectedTask
-        if let selectedTask {
-            typeTask = .EDIT
-        } else {
-            typeTask = .CREATE
-        }
-        self._titleTask = State(initialValue: selectedTask?.title ?? "")
-        self._descriptionTask = State(initialValue: selectedTask?.descriptionTask ?? "")
+        self.typeTask = typeTask
+        self._titleTask = State(initialValue: selectedTask?.title ?? .empty)
+        self._descriptionTask = State(initialValue: selectedTask?.descriptionTask ?? .empty)
         self._timeTask = State(initialValue: selectedTask?.time ?? Date())
-        self._alarmTask = State(initialValue: selectedTask?.alarm ?? Date())
     }
     
     var body: some View {
@@ -45,19 +40,16 @@ struct NewTask: View {
                 Section {
                     TextField("Title",
                               text: $titleTask)
+                    .keyboardType(.default)
                     TextField("Description",
                               text: $descriptionTask)
+                    .keyboardType(.default)
                     HStack {
                         Image(systemName: "clock")
                             .foregroundStyle(Color.gray)
                         DatePicker("Time",
                                    selection: $timeTask,
                                    displayedComponents: .hourAndMinute)
-                    }
-                    HStack {
-                        Image(systemName: "bell")
-                            .foregroundStyle(Color.gray)
-                        DatePicker("Alarm", selection: $alarmTask, displayedComponents: .hourAndMinute)
                     }
                 } header: {
                     if typeTask == .CREATE {
@@ -69,17 +61,15 @@ struct NewTask: View {
                 
                 Section {
                     Button(action: {
-                        let newTask = Task(title: titleTask, descriptionTask: descriptionTask, date: dateTask, time: timeTask, alarm: alarmTask)
+                        let newTask = Task(title: titleTask, descriptionTask: descriptionTask, date: dateTask, time: timeTask)
                         if typeTask == .EDIT {
-                            let newTaskList = task.map { task in
-                                if task.id == selectedTask?.id {
-                                    return newTask
-                                }
-                                return task
-                            }
-                            task = newTaskList
+                            self.selectedTask?.title = newTask.title
+                            self.selectedTask?.descriptionTask = newTask.descriptionTask
+                            self.selectedTask?.date = newTask.date
+                            self.selectedTask?.time = newTask.time
+                            TaskDataManager.updateTask(task: newTask, modelContext: context)
                         } else {
-                            task.append(newTask)
+                            TaskDataManager.saveNewTask(task: newTask, modelContext: context)
                         }
                         dismiss()
                     }) {
@@ -89,7 +79,7 @@ struct NewTask: View {
                                 .frame(maxWidth: .infinity)
                                 .foregroundStyle(Color.blue)
                         } else {
-                            Text("Edit")
+                            Text("Save")
                                 .frame(maxWidth: .infinity)
                                 .foregroundStyle(Color.blue)
                         }

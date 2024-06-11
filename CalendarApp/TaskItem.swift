@@ -8,51 +8,47 @@
 import SwiftUI
 
 struct TaskItem: View {
+    @Environment(\.modelContext) private var context
     
-    @Binding var tasks: [Task]
     var task: Task
     
     var body: some View {
         NavigationStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(task.time.getHourAndMinute())
+                    Text(task.time?.getHourAndMinute() ?? .empty)
                         .font(.system(size: 10))
                         .foregroundStyle(Color.gray)
                         .italic()
-                    Text(task.title)
+                    Text(task.title ?? .empty)
                         .font(.system(size: 18))
                         .bold()
-                    Text(task.descriptionTask)
+                    Text(task.descriptionTask ?? .empty)
                         .font(.system(size: 12))
-                        .foregroundStyle(Color.gray)
                 }
                 .padding(.leading, 30)
-                
-                Spacer()
                 Spacer()
                 VStack {
                     NavigationLink {
-                        NewTask(task: $tasks, dateTask: task.date,
-                                selectedTask: task)
+                        NewTask(dateTask: task.date ?? Date(),
+                                selectedTask: task,
+                                typeTask: .EDIT)
                     } label: {
-                        Text("Edit")
-                            .font(.system(size: 12))
-                            .bold()
-                            .padding(.bottom, 10)
+                        Image(systemName: "pencil")
+                            .foregroundStyle(Color.gray)
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    Image(systemName: "bell.fill")
+                    
+                    Spacer()
+                    Button(action: {
+                        TaskDataManager.deleteTask(task: task, modelContext: context)
+                    }, label: {
+                        Image(systemName: "trash")
+                            .foregroundStyle(Color.gray)
+                    })
+                    
                 }
                 .padding(.horizontal, 30)
             }
         }
     }
-}
-
-
-#Preview {
-    @State var tasks1: [Task] = []
-    let newTask = Task(title: "qwer", descriptionTask: "description", date: Date(), time: Date(), alarm: Date())
-    return TaskItem(tasks: $tasks1, task: newTask)
 }

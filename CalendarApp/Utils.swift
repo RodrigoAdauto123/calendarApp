@@ -14,3 +14,8 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+extension String {
+    static let empty = ""
+    static let space = " "
+}
