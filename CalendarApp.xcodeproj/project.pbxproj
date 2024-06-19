@@ -17,6 +17,10 @@
 		6155843C2BFD98C5004E698A /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155843B2BFD98C5004E698A /* NewTask.swift */; };
 		6155843E2BFDAD80004E698A /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155843D2BFDAD80004E698A /* TaskItem.swift */; };
 		615584402BFDB071004E698A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155843F2BFDB071004E698A /* Utils.swift */; };
+		618F91F42C2156A300F22832 /* RecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F91F32C2156A300F22832 /* RecorderView.swift */; };
+		618F91F62C2157E700F22832 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F91F52C2157E700F22832 /* AudioRecorder.swift */; };
+		618F91F82C225F8B00F22832 /* BiometricIDAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F91F72C225F8B00F22832 /* BiometricIDAuth.swift */; };
+		618F91FC2C226DA400F22832 /* CalendarSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F91FB2C226DA400F22832 /* CalendarSplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		6155843B2BFD98C5004E698A /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		6155843D2BFDAD80004E698A /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		6155843F2BFDB071004E698A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		618F91F32C2156A300F22832 /* RecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderView.swift; sourceTree = "<group>"; };
+		618F91F52C2157E700F22832 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		618F91F72C225F8B00F22832 /* BiometricIDAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricIDAuth.swift; sourceTree = "<group>"; };
+		618F91FB2C226DA400F22832 /* CalendarSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSplashView.swift; sourceTree = "<group>"; };
 		61E5EA832C13B25200E90E9B /* NoteCal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoteCal.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +76,11 @@
 				6152D87B2C0FDB140026F8F6 /* CalendarSplash.storyboard */,
 				6155842B2BFD78B5004E698A /* CalendarAppApp.swift */,
 				6155842D2BFD78B5004E698A /* MainView.swift */,
+				618F91FB2C226DA400F22832 /* CalendarSplashView.swift */,
+				618F91F72C225F8B00F22832 /* BiometricIDAuth.swift */,
 				6155843F2BFDB071004E698A /* Utils.swift */,
+				618F91F32C2156A300F22832 /* RecorderView.swift */,
+				618F91F52C2157E700F22832 /* AudioRecorder.swift */,
 				6155843B2BFD98C5004E698A /* NewTask.swift */,
 				6155843D2BFDAD80004E698A /* TaskItem.swift */,
 				615584392BFD9863004E698A /* Task.swift */,
@@ -163,12 +175,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6155842E2BFD78B5004E698A /* MainView.swift in Sources */,
+				618F91F82C225F8B00F22832 /* BiometricIDAuth.swift in Sources */,
 				6155843E2BFDAD80004E698A /* TaskItem.swift in Sources */,
 				6155843C2BFD98C5004E698A /* NewTask.swift in Sources */,
+				618F91F62C2157E700F22832 /* AudioRecorder.swift in Sources */,
 				6120918D2C112E6000B4F6B1 /* TaskDataManager.swift in Sources */,
 				6155843A2BFD9863004E698A /* Task.swift in Sources */,
 				6155842C2BFD78B5004E698A /* CalendarAppApp.swift in Sources */,
+				618F91F42C2156A300F22832 /* RecorderView.swift in Sources */,
 				615584402BFDB071004E698A /* Utils.swift in Sources */,
+				618F91FC2C226DA400F22832 /* CalendarSplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +329,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = CalendarSplash.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,6 +362,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = CalendarSplash.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

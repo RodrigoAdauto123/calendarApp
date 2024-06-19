@@ -15,11 +15,13 @@ class Task: Identifiable {
     var descriptionTask: String?
     var date: Date?
     var time: Date?
+    var audioFilename: String?
     
-    init(title: String, descriptionTask: String, date: Date, time: Date) {
+    init(title: String, descriptionTask: String, date: Date, time: Date, audioFilename: String = .empty) {
         self.title = title
         self.descriptionTask = descriptionTask
         self.date = date
         self.time = time
+        self.audioFilename = audioFilename
     }
 }

@@ -21,8 +21,9 @@ struct MainView: View {
                 .datePickerStyle(.graphical)
                 let taskFilter = tasks.filter { Calendar.current.isDate($0.date ?? Date(),
                                                                         inSameDayAs: selectedDate)}
+                let taskSorted = taskFilter.sorted { $0.time ?? Date() > $1.time ?? Date() }
                 ScrollView {
-                    ForEach(taskFilter) { task in
+                    ForEach(taskSorted) { task in
                         TaskItem(task: task)
                             .padding(.bottom, 20)
                     }

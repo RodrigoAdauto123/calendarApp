@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TaskItem: View {
     @Environment(\.modelContext) private var context
-    
     var task: Task
     
     var body: some View {
